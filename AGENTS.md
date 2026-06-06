@@ -48,14 +48,15 @@ rg -n "AGENTS.md|GitHub Issue|gh issue view|gh issue create|gh pr create|gh pr v
 ## Workflow Order
 
 1. `setup-agent-workflow`
-2. `rules-interactive` or `create-rules`
-3. `prd-interactive` or `create-prd`
-4. `create-stories`
-5. `prime`
-6. `plan`
-7. `implement`
-8. `validate`
-9. `review` / `security-review`
+2. `grill-with-docs`
+3. `rules-interactive` or `create-rules`
+4. `prd-interactive` or `create-prd`
+5. `create-stories`
+6. `prime`
+7. `plan`
+8. `implement`
+9. `validate`
+10. `review` / `security-review`
 
 ## Editing Rules
 
@@ -75,6 +76,7 @@ rg -n "AGENTS.md|GitHub Issue|gh issue view|gh issue create|gh pr create|gh pr v
 | `.agents/README.md` | Explains the AI layer and every workflow |
 | `.agents/AGENTS-template.md` | Base for generated downstream `AGENTS.md` files |
 | `.agents/skills/setup-agent-workflow/SKILL.md` | Sets up downstream agent context docs and canonical GitHub triage labels |
+| `.agents/skills/grill-with-docs/SKILL.md` | Clarifies domain/project context and updates `CONTEXT.md` or lightweight ADRs |
 | `.agents/skills/rules-interactive.md` | Greenfield interview workflow for generating `AGENTS.md` |
 | `.agents/skills/create-rules.md` | Existing-codebase workflow for generating `AGENTS.md` |
 | `.agents/skills/create-stories.md` | PRD-to-GitHub-Issue story manifest workflow |
