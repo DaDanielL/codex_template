@@ -15,19 +15,21 @@ This directory contains reusable Codex workflows for turning an idea into implem
 
 ## Workflow Order
 
-1. `rules-interactive` or `create-rules`
-2. `prd-interactive` or `create-prd`
-3. `create-stories`
-4. `prime`
-5. `plan`
-6. `implement`
-7. `validate`
-8. `review` / `security-review`
+1. `setup-agent-workflow`
+2. `rules-interactive` or `create-rules`
+3. `prd-interactive` or `create-prd`
+4. `create-stories`
+5. `prime`
+6. `plan`
+7. `implement`
+8. `validate`
+9. `review` / `security-review`
 
 ## Workflows
 
 | Workflow | Use When | Output |
 |----------|----------|--------|
+| `setup-agent-workflow` | A repo needs lightweight agent context docs, canonical triage labels, and GitHub-Issue-driven workflow setup | `AGENTS.md` or `CLAUDE.md`; `CONTEXT.md`; `docs/agents/*`; `docs/adr/`; GitHub labels |
 | `rules-interactive` | Greenfield project with a PRD but unknown stack, architecture, tools, and folder structure | Root `AGENTS.md` |
 | `create-rules` | Existing project needs Codex rules extracted from the codebase | Root `AGENTS.md` |
 | `prd-interactive` | Product idea needs guided discovery before writing a PRD | `.agents/PRDs/{name}.prd.md` |
@@ -71,13 +73,14 @@ Use `.agents/AGENTS-template.md` as the base template.
 
 ## Recommended Greenfield Flow
 
-1. Run `prd-interactive` to shape the product idea into `.agents/PRDs/{name}.prd.md`.
-2. Run `rules-interactive .agents/PRDs/{name}.prd.md` to decide stack, architecture, tools, tests, folder structure, and key files, then generate `AGENTS.md`.
-3. Run `create-stories .agents/PRDs/{name}.prd.md` to create a story manifest.
-4. Optionally create GitHub Issues with `gh issue create`.
-5. Run `prime`, then `plan` for the first story or issue.
-6. Run `implement`, then `validate`.
-7. Run `review` and `security-review` before merging.
+1. Run `setup-agent-workflow` to configure agent context docs and canonical GitHub labels.
+2. Run `prd-interactive` to shape the product idea into `.agents/PRDs/{name}.prd.md`.
+3. Run `rules-interactive .agents/PRDs/{name}.prd.md` to decide stack, architecture, tools, tests, folder structure, and key files, then generate `AGENTS.md`.
+4. Run `create-stories .agents/PRDs/{name}.prd.md` to create a story manifest.
+5. Optionally create GitHub Issues with `gh issue create`.
+6. Run `prime`, then `plan` for the first story or issue.
+7. Run `implement`, then `validate`.
+8. Run `review` and `security-review` before merging.
 
 ## Template Rule
 
