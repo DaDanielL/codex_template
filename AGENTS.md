@@ -75,8 +75,8 @@ rg -n "AGENTS.md|GitHub Issue|gh issue view|gh issue create|gh pr create|gh pr v
 |------|---------|
 | `.agents/README.md` | Explains the AI layer and every workflow |
 | `.agents/AGENTS-template.md` | Base for generated downstream `AGENTS.md` files |
-| `.agents/skills/setup-agent-workflow/SKILL.md` | Sets up downstream agent context docs and canonical GitHub triage labels |
-| `.agents/skills/grill-with-docs/SKILL.md` | Clarifies domain/project context and updates `CONTEXT.md` or lightweight ADRs |
+| `.agents/skills/setup-agent-workflow/SKILL.md` | Sets up downstream agent workflow config, root glossary, and canonical GitHub triage labels |
+| `.agents/skills/grill-with-docs/SKILL.md` | Clarifies domain language and updates the `CONTEXT.md` glossary or lightweight ADRs |
 | `.agents/skills/rules-interactive.md` | Greenfield interview workflow for generating `AGENTS.md` |
 | `.agents/skills/create-rules.md` | Existing-codebase workflow for generating `AGENTS.md` |
 | `.agents/skills/create-stories.md` | PRD-to-GitHub-Issue story manifest workflow |

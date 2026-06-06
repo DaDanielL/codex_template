@@ -5,19 +5,19 @@ description: Set up the repository-level agent workflow context for GitHub-Issue
 
 # Setup Agent Workflow
 
-Scaffold the lightweight repo context that the engineering skills consume. This setup is GitHub-only, optimized for a solo developer, and keeps workflow behavior inside skills rather than in a large repo doc.
+Scaffold the lightweight repo workflow configuration that the engineering skills consume. This setup is GitHub-only, optimized for a solo developer, and keeps workflow behavior inside skills rather than in a large repo doc.
 
 ## Creates
 
 - `AGENTS.md` or `CLAUDE.md` with an `## Agent skills` block
-- `CONTEXT.md` when missing
+- root `CONTEXT.md` glossary when missing
 - `docs/agents/issue-tracker.md`, `docs/agents/triage-labels.md`, `docs/agents/domain.md`
 - `docs/adr/`
 - GitHub labels: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`
 
 ## Non-Goals
 
-Do not create `.scratch/`, `docs/prd/`, `docs/agents/workflow.md`, `.github/ISSUE_TEMPLATE/`, local duplicate issue drafts, or custom priority/type/area labels.
+Do not create `.scratch/`, `docs/prd/`, `CONTEXT-MAP.md`, `docs/agents/workflow.md`, `.github/ISSUE_TEMPLATE/`, local duplicate issue drafts, or custom priority/type/area labels.
 
 ## Phase 1: Explore
 
@@ -44,7 +44,7 @@ If the repo is not a git repo, has no GitHub remote, `gh` is missing, or `gh` is
 
 When an `## Agent skills` block already exists, update it in place instead of appending a duplicate. Preserve unrelated user edits.
 
-## Phase 3: Write Repo Context
+## Phase 3: Write Repo Configuration
 
 Add or update this block in the selected instruction file:
 
@@ -58,7 +58,7 @@ GitHub Issues are the source of truth for PRDs, implementation issues, bugs, ref
 Use the five canonical labels: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, and `wontfix`. See `docs/agents/triage-labels.md`.
 
 ### Domain docs
-Use a single lightweight `CONTEXT.md` plus lightweight ADRs in `docs/adr/`. See `docs/agents/domain.md`.
+Use one root `CONTEXT.md` as the project glossary, plus lightweight ADRs in `docs/adr/` for meaningful decisions. See `docs/agents/domain.md`.
 ```
 
 Create missing docs from this skill's seed files:
@@ -66,9 +66,9 @@ Create missing docs from this skill's seed files:
 - [issue-tracker-github.md](issue-tracker-github.md) -> `docs/agents/issue-tracker.md`
 - [triage-labels.md](triage-labels.md) -> `docs/agents/triage-labels.md`
 - [domain.md](domain.md) -> `docs/agents/domain.md`
-- [context-template.md](context-template.md) -> `CONTEXT.md`
+- [context-template.md](context-template.md) -> root `CONTEXT.md`
 
-Create `docs/adr/`, but do not add `.gitkeep` or a heavy ADR template.
+Create `docs/adr/`, but do not add `.gitkeep` or a heavy ADR template. This template supports a single root `CONTEXT.md`; do not create `CONTEXT-MAP.md`.
 
 ## Phase 4: Ensure GitHub Labels
 
@@ -86,4 +86,4 @@ Do not create custom colors or extra labels.
 
 ## Phase 5: Report
 
-Summarize the instruction file changed, context docs created or updated, labels created or already present, and any blockers. Say the repo is ready for `grill-with-docs`, `to-prd`, `to-issues`, and `triage` only if all setup checks passed.
+Summarize the instruction file changed, agent docs and glossary created or updated, labels created or already present, and any blockers. Say the repo is ready for `grill-with-docs`, `to-prd`, `to-issues`, and `triage` only if all setup checks passed.

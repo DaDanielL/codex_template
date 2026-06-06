@@ -30,8 +30,8 @@ This directory contains reusable Codex workflows for turning an idea into implem
 
 | Workflow | Use When | Output |
 |----------|----------|--------|
-| `setup-agent-workflow` | A repo needs lightweight agent context docs, canonical triage labels, and GitHub-Issue-driven workflow setup | `AGENTS.md` or `CLAUDE.md`; `CONTEXT.md`; `docs/agents/*`; `docs/adr/`; GitHub labels |
-| `grill-with-docs` | Project, domain, or feature context needs question-by-question clarification before durable planning or implementation | Updated `CONTEXT.md`; optional lightweight ADRs |
+| `setup-agent-workflow` | A repo needs agent workflow config, a root glossary, canonical triage labels, and GitHub-Issue-driven setup | `AGENTS.md` or `CLAUDE.md`; `CONTEXT.md`; `docs/agents/*`; `docs/adr/`; GitHub labels |
+| `grill-with-docs` | Project or domain language needs question-by-question clarification before durable planning or implementation | Updated `CONTEXT.md` glossary; optional lightweight ADRs |
 | `rules-interactive` | Greenfield project with a PRD but unknown stack, architecture, tools, and folder structure | Root `AGENTS.md` |
 | `create-rules` | Existing project needs Codex rules extracted from the codebase | Root `AGENTS.md` |
 | `prd-interactive` | Product idea needs guided discovery before writing a PRD | `.agents/PRDs/{name}.prd.md` |
@@ -75,8 +75,8 @@ Use `.agents/AGENTS-template.md` as the base template.
 
 ## Recommended Greenfield Flow
 
-1. Run `setup-agent-workflow` to configure agent context docs and canonical GitHub labels.
-2. Run `grill-with-docs` when the domain language, project facts, or feature intent needs clarification.
+1. Run `setup-agent-workflow` to configure agent workflow docs, a root glossary, and canonical GitHub labels.
+2. Run `grill-with-docs` when the domain language or feature terminology needs clarification.
 3. Run `prd-interactive` to shape the product idea into `.agents/PRDs/{name}.prd.md`.
 4. Run `rules-interactive .agents/PRDs/{name}.prd.md` to decide stack, architecture, tools, tests, folder structure, and key files, then generate `AGENTS.md`.
 5. Run `create-stories .agents/PRDs/{name}.prd.md` to create a story manifest.

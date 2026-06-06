@@ -1,37 +1,18 @@
 # Project Context
 
-## Overview
+One or two sentences describing what domain or product context this glossary covers.
 
-Describe what this project is, who it serves, and what the current product or engineering goal is.
+## Language
 
-## Important Source Folders
+**Canonical Term**:
+One or two sentences defining what this term is in this project.
+_Avoid_: overloaded synonym, misleading synonym
 
-| Path | Purpose |
-|------|---------|
-| `TBD` | Add important source folders after setup. |
+Add project-specific terms as they become important. Keep this file as a glossary only.
 
-## Agent Configuration
+## Rules
 
-| File | Purpose |
-|------|---------|
-| `docs/agents/issue-tracker.md` | GitHub Issues source-of-truth rules and issue formats. |
-| `docs/agents/triage-labels.md` | Canonical workflow labels and label transitions. |
-| `docs/agents/domain.md` | Context and ADR reading rules. |
-
-## Issue Tracking
-
-Planned work lives in GitHub Issues.
-
-- PRD issues use the `[PRD]` title prefix.
-- Implementation issues link to their source PRD when applicable.
-- Non-PRD issues include a `## Dependencies` section.
-
-## ADRs
-
-Meaningful decisions live in `docs/adr/`.
-
-Create ADRs only for decisions that affect future development, architecture, product behavior, workflow, testing, or repo structure.
-
-## Domain Terms
-
-Add project-specific domain terms here as they become important.
+- Pick one canonical word for each concept.
+- Put rejected synonyms or overloaded terms under `_Avoid_:`.
+- Define what the term is, not what it does.
+- Do not include implementation details, issue tracking rules, source folder maps, PRDs, plans, scratch notes, or general programming concepts.

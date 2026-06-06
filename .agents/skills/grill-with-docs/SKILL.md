@@ -1,11 +1,11 @@
 ---
 name: grill-with-docs
-description: Clarify project and domain context through a question-by-question grilling session, updating CONTEXT.md and lightweight ADRs as decisions crystallize. Use when a feature, MVP, product idea, domain model, or repo context needs sharper language before to-prd, to-issues, triage, tdd, diagnose, or architecture review.
+description: Clarify project/domain language through a question-by-question grilling session, updating the root CONTEXT.md glossary and lightweight ADRs as decisions crystallize. Use when a feature, MVP, product idea, domain model, or repository terminology needs sharper language before to-prd, to-issues, triage, tdd, diagnose, or architecture review.
 ---
 
 # Grill With Docs
 
-Build shared understanding before durable work begins. This skill may inspect code and update context docs, but it must not implement code, create PRDs, create GitHub Issues, open PRs, or expand into planning unless the user explicitly asks afterward.
+Build shared understanding before durable work begins. This skill may inspect code and update the glossary, but it must not implement code, create PRDs, create GitHub Issues, open PRs, or expand into planning unless the user explicitly asks afterward.
 
 ## Start
 
@@ -37,11 +37,11 @@ Your context says "Customer" is the account owner, but you seem to mean the logg
 
 ## Update CONTEXT.md Inline
 
-When a project fact, domain term, source folder, or context pointer is resolved, update `CONTEXT.md` immediately using [CONTEXT-FORMAT.md](CONTEXT-FORMAT.md).
+When a domain term is resolved, update the root `CONTEXT.md` immediately using [CONTEXT-FORMAT.md](CONTEXT-FORMAT.md).
 
-`CONTEXT.md` is a lightweight context map. It is not a PRD index, implementation plan, issue draft, scratch pad, or giant knowledge base.
+`CONTEXT.md` is a glossary and nothing else. It is not a project overview, source-folder map, issue-tracker guide, PRD index, implementation plan, issue draft, scratch pad, or architecture decision log.
 
-Do not manually list every PRD. PRDs live in GitHub Issues.
+This template uses a single root `CONTEXT.md` for now. Do not create `CONTEXT-MAP.md`.
 
 ## ADRs
 
@@ -57,8 +57,8 @@ Use [ADR-FORMAT.md](ADR-FORMAT.md). Do not create ADRs for obvious choices or sm
 
 When the grilling session is done, summarize:
 
-- clarified domain terms and project facts
-- docs updated
+- clarified domain terms
+- glossary updates
 - ADRs created or proposed
 - open questions that remain
 - recommended next workflow, usually `to-prd`, `to-issues`, or `triage`
