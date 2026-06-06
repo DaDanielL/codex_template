@@ -6,4 +6,4 @@ This repository does not contain a demo app. It provides the `.agents/` workflow
 
 Start with [.agents/README.md](.agents/README.md).
 
-For a downstream repo, run `setup-agent-workflow` first to create agent workflow config, a root glossary, and the canonical GitHub triage labels. Use `grill-with-docs` next when project or feature terminology needs clarification.
+For a downstream repo, run `setup-agent-workflow` first to create agent workflow config, a root glossary, and the canonical GitHub triage labels. Use `grill-with-docs` when terminology needs clarification, then `to-prd` to publish a `[PRD]` GitHub Issue from current context.
