@@ -107,8 +107,10 @@ Run these before reporting work complete:
 
 ## GitHub Workflow
 
-- **Issues**: Use GitHub Issues for trackable stories and bugs.
-- **Issue creation**: Use `gh issue create` when turning story manifests into issues.
+- **Issues**: Use GitHub Issues as the source of truth for PRDs, implementation issues, bugs, refactors, docs, and chores.
+- **PRDs**: Use `[PRD]` GitHub Issues created by `to-prd` for the default PRD workflow.
+- **Implementation issues**: Use `to-issues` to turn `[PRD]` issues into approved vertical-slice child issues.
+- **Issue creation**: Use `gh issue create` for approved issues and `gh issue comment` to link child issues back to their parent PRD.
 - **Issue inspection**: Use `gh issue view {number}` before planning linked work.
 - **Branches**: `{branch-naming-pattern}`
 - **Pull requests**: Use `gh pr create` for PRs and `gh pr view` to inspect PR context.
@@ -120,17 +122,17 @@ Generated artifacts live under `.agents/`:
 
 | Artifact | Path |
 |----------|------|
-| PRDs | `.agents/PRDs/` |
-| Story manifests | `.agents/stories/` |
+| Legacy local PRDs | `.agents/PRDs/` |
+| Legacy local story manifests | `.agents/stories/` |
 | Implementation plans | `.agents/plans/` |
 | Implementation reports | `.agents/reports/` |
 | Reviews | `.agents/reviews/` |
 
 Recommended workflow:
 
-1. `rules-interactive` or `create-rules`
-2. `prd-interactive` or `create-prd`
-3. `create-stories`
+1. `grill-with-docs`
+2. `to-prd`
+3. `to-issues`
 4. `prime`
 5. `plan`
 6. `implement`

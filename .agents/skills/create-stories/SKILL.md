@@ -1,9 +1,11 @@
 ---
 name: create-stories
-description: Use when a PRD should be broken into small GitHub issue-ready stories and saved as a story manifest.
+description: Legacy local story-manifest workflow. Use only when the user explicitly asks to save a PRD breakdown in .agents/stories instead of publishing GitHub implementation issues with to-issues.
 ---
 
 # Create GitHub Stories from PRD
+
+Legacy workflow: prefer `to-issues` for normal agentic engineering. `to-issues` creates approval-gated GitHub implementation issues from a `[PRD]` issue and keeps GitHub Issues as the source of truth.
 
 Generate a structured story manifest from a Product Requirements Document. Optionally create the stories as GitHub Issues with `gh issue create`.
 
