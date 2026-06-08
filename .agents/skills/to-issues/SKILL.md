@@ -96,4 +96,4 @@ gh issue comment {PRD_NUMBER} --body "Implementation issues created from this PR
 
 ## Report
 
-Summarize the created issues, dependency order, HITL issues, AFK-ready issues, parent PRD comment, and recommended next workflow: `triage` or implementation on the first unblocked `ready-for-agent` issue.
+Summarize the created issues, dependency order, HITL issues, AFK-ready issues, parent PRD comment, and recommended next workflow: `triage`.

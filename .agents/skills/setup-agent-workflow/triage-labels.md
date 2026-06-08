@@ -2,6 +2,8 @@
 
 Use these five canonical labels only for workflow state.
 
+An issue should have exactly one canonical state label at a time.
+
 | Label | Meaning |
 |-------|---------|
 | `needs-triage` | Issue exists but has not been clarified or classified yet. |
@@ -20,12 +22,18 @@ Use these five canonical labels only for workflow state.
 
 ## PRD Label Flow
 
-- New `[PRD]` issue: `ready-for-human`
+- New `[PRD]` issue created by `to-prd`: `ready-for-agent`
 - Missing or blocking requirements: `needs-info`
-- Requirements answered and ready for review: `ready-for-human`
-- Approved PRD: break into child issues after human approval
+- Ready for issue slicing: `ready-for-agent`
+- Human judgment or approval needed before slicing: `ready-for-human`
+
+For a PRD, `ready-for-agent` means ready for `to-issues`, not direct code implementation.
 
 Child issues from an approved PRD default to `ready-for-agent` unless that specific issue needs more information or human judgment.
+
+## Needs Info Resumption
+
+When a reporter answers a `needs-info` question, read prior triage notes, preserve what has been established, and do not re-ask resolved questions. Move the issue back to `needs-triage` or directly to the appropriate ready state once the missing information is resolved.
 
 ## Ready For Human
 

@@ -112,6 +112,8 @@ Run these before reporting work complete:
 - **Implementation issues**: Use `to-issues` to turn `[PRD]` issues into approved vertical-slice child issues.
 - **Issue creation**: Use `gh issue create` for approved issues and `gh issue comment` to link child issues back to their parent PRD.
 - **Issue inspection**: Use `gh issue view {number}` before planning linked work.
+- **Issue triage**: Use `triage` and `gh issue edit` to move issues through exactly one canonical state label.
+- **Human handoff**: `ready-for-human` must state the exact human action needed.
 - **Branches**: `{branch-naming-pattern}`
 - **Pull requests**: Use `gh pr create` for PRs and `gh pr view` to inspect PR context.
 - **PR expectation**: include summary, validation run, screenshots or recordings when UI changes, and linked issue.
@@ -133,11 +135,12 @@ Recommended workflow:
 1. `grill-with-docs`
 2. `to-prd`
 3. `to-issues`
-4. `prime`
-5. `plan`
-6. `implement`
-7. `validate`
-8. `review` / `security-review`
+4. `triage`
+5. `prime`
+6. `plan`
+7. `implement`
+8. `validate`
+9. `review` / `security-review`
 
 ## Security Notes
 
