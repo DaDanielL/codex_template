@@ -114,7 +114,9 @@ Run these before reporting work complete:
 - **Issue inspection**: Use `gh issue view {number}` before planning linked work.
 - **Issue triage**: Use `triage` and `gh issue edit` to move issues through exactly one canonical state label.
 - **Human handoff**: `ready-for-human` must state the exact human action needed.
+- **TDD**: Use `tdd` for behavior-changing `ready-for-agent` issues. It performs inline planning and does not require `prime` or `plan`.
 - **Branches**: `{branch-naming-pattern}`
+- **Branch timing**: Create or switch to a work branch before code edits.
 - **Pull requests**: Use `gh pr create` for PRs and `gh pr view` to inspect PR context.
 - **PR expectation**: include summary, validation run, screenshots or recordings when UI changes, and linked issue.
 
@@ -136,11 +138,9 @@ Recommended workflow:
 2. `to-prd`
 3. `to-issues`
 4. `triage`
-5. `prime`
-6. `plan`
-7. `implement`
-8. `validate`
-9. `review` / `security-review`
+5. `tdd`
+6. `validate`
+7. `review` / `security-review`
 
 ## Security Notes
 

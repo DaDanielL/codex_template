@@ -4,7 +4,7 @@ This repository is a reusable AI-agent-layer template for Codex. It contains wor
 
 ## Project Overview
 
-The template helps Codex-driven projects move from idea to reviewed implementation through PRDs, GitHub issue-ready vertical slices, context priming, implementation plans, validation, and review workflows.
+The template helps Codex-driven projects move from idea to reviewed implementation through PRDs, GitHub issue-ready vertical slices, TDD implementation, validation, and review workflows.
 
 Do not create a demo app, product scaffold, or framework-specific sample inside this repository.
 
@@ -25,7 +25,7 @@ No application runtime is required. The repository is Markdown workflow content.
 rg --files
 
 # Check workflow command coverage
-rg -n "AGENTS.md|GitHub Issue|gh issue view|gh issue create|gh issue comment|gh issue edit|gh pr create|gh pr view|to-issues|triage|.agents/PRDs|.agents/stories|.agents/plans" .agents README.md AGENTS.md
+rg -n "AGENTS.md|GitHub Issue|gh issue view|gh issue create|gh issue comment|gh issue edit|gh pr create|gh pr view|to-issues|triage|tdd|.agents/PRDs|.agents/stories|.agents/plans" .agents README.md AGENTS.md
 ```
 
 ## Architecture
@@ -52,13 +52,9 @@ rg -n "AGENTS.md|GitHub Issue|gh issue view|gh issue create|gh issue comment|gh 
 3. `to-prd`
 4. `to-issues`
 5. `triage`
-6. `rules-interactive` or `create-rules`
-7. `prd-interactive` or `create-prd`
-8. `prime`
-9. `plan`
-10. `implement`
-11. `validate`
-12. `review` / `security-review`
+6. `tdd`
+7. `validate`
+8. `review` / `security-review`
 
 ## Editing Rules
 
@@ -71,6 +67,8 @@ rg -n "AGENTS.md|GitHub Issue|gh issue view|gh issue create|gh issue comment|gh 
 - Use GitHub Issues instead of external issue trackers.
 - Use `to-issues` after `to-prd` so `[PRD]` issues become approved vertical-slice child issues before implementation.
 - Use `triage` to move issues through the five canonical issue states before implementation.
+- Use `tdd` for behavior-changing `ready-for-agent` issues; it performs inline planning and does not require `prime` or `plan`.
+- Branch before code edits during TDD, but do not make one issue, one branch, one PR a TDD requirement.
 - Prefer `gh issue view`, `gh issue create`, `gh issue comment`, `gh issue edit`, `gh pr create`, and `gh pr view` where useful.
 - Do not introduce framework-specific demo code.
 
@@ -86,6 +84,7 @@ rg -n "AGENTS.md|GitHub Issue|gh issue view|gh issue create|gh issue comment|gh 
 | `.agents/skills/to-issues/SKILL.md` | Breaks a `[PRD]` issue into approved vertical-slice GitHub implementation issues |
 | `.agents/skills/triage/SKILL.md` | Classifies GitHub Issues and prepares Agent Briefs for `ready-for-agent` work |
 | `.agents/skills/triage/AGENT-BRIEF.md` | Template for durable `ready-for-agent` issue comments |
+| `.agents/skills/tdd/SKILL.md` | Implements behavior-changing `ready-for-agent` issues with inline planning and red-green-refactor cycles |
 | `.agents/skills/rules-interactive/SKILL.md` | Greenfield interview workflow for generating `AGENTS.md` |
 | `.agents/skills/create-rules/SKILL.md` | Existing-codebase workflow for generating `AGENTS.md` |
 | `.agents/skills/create-stories/SKILL.md` | Legacy local story manifest workflow |
