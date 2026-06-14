@@ -71,6 +71,12 @@ Bug and performance issues must include:
 
 A bug can be `ready-for-agent` only when it has observed behavior, expected behavior, a reproduction path or failing command/test, and dependencies.
 
+## TDD Workflow
+
+Behavior-changing `ready-for-agent` issues can go directly to `tdd` after triage. The `tdd` skill performs inline planning from the issue and Agent Brief, branches before code edits, and works in red-green-refactor cycles.
+
+If automated TDD is impractical, the agent should explain why and use the closest verification method.
+
 ## PRs
 
 Default traceability is one issue, one branch, one PR.
