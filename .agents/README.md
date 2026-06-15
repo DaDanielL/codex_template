@@ -24,7 +24,7 @@ This directory contains reusable Codex workflows for turning an idea into implem
 7. `validate`
 8. `review` / `security-review`
 
-Optional supporting workflows: `rules-interactive` / `create-rules`, `prd-interactive` / `create-prd`, `prime`, `plan`, `implement`, and `install`.
+Optional supporting workflows: `rules-interactive` / `create-rules`, `prd-interactive` / `create-prd`, `prime`, `plan`, `diagnose`, `implement`, and `install`.
 
 ## Workflows
 
@@ -35,6 +35,7 @@ Optional supporting workflows: `rules-interactive` / `create-rules`, `prd-intera
 | `to-prd` | Current conversation and codebase context should become a `[PRD]` GitHub Issue | GitHub Issue labeled `ready-for-agent` |
 | `to-issues` | A `[PRD]` GitHub Issue or approved plan should become vertical-slice implementation issues | Approved GitHub child issues labeled `ready-for-agent` or `ready-for-human` |
 | `triage` | GitHub Issues need classification through canonical state labels or preparation for AFK agent work | Updated issue state label; optional triage notes or Agent Brief comment |
+| `diagnose` | A hard bug, flaky failure, or performance regression needs a feedback-loop-first investigation | Reproduction loop, root-cause notes, regression test or seam finding, and fix notes |
 | `tdd` | A behavior-changing `ready-for-agent` issue should be implemented with inline planning and red-green-refactor cycles | Code changes plus tested behavior; recommends `validate` |
 | `rules-interactive` | Greenfield project with a PRD but unknown stack, architecture, tools, and folder structure | Root `AGENTS.md` |
 | `create-rules` | Existing project needs Codex rules extracted from the codebase | Root `AGENTS.md` |
@@ -72,6 +73,8 @@ Use `to-issues` after `to-prd` to create approved vertical-slice child issues. E
 
 Use `triage` to move issues through the five canonical state labels. `ready-for-agent` implementation issues must have an Agent Brief comment. `ready-for-human` issues must state the exact human action needed.
 
+Use `diagnose` when a bug or performance issue needs investigation before the fix is obvious. `diagnose` builds a feedback loop first, reproduces the real symptom, tests falsifiable hypotheses, and leaves root-cause notes on the issue.
+
 Use `tdd` after `triage` for behavior-changing `ready-for-agent` issues. `tdd` performs inline planning from the issue and Agent Brief, so `prime` and `plan` are optional rather than required.
 
 Story manifests from `create-stories` are legacy local artifacts. Use them only when the user explicitly wants a saved manifest instead of GitHub-native implementation issues.
@@ -96,7 +99,7 @@ Use `.agents/AGENTS-template.md` as the base template.
 7. Run `validate`.
 8. Run `review` and `security-review` before merging.
 
-Use `prime`, `plan`, or `implement` only when extra context, a durable implementation plan, or generic plan execution is useful.
+Use `diagnose` for hard bugs and performance regressions. Use `prime`, `plan`, or `implement` only when extra context, a durable implementation plan, or generic plan execution is useful.
 
 ## Template Rule
 

@@ -4,7 +4,7 @@ This repository is a reusable AI-agent-layer template for Codex. It contains wor
 
 ## Project Overview
 
-The template helps Codex-driven projects move from idea to reviewed implementation through PRDs, GitHub issue-ready vertical slices, TDD implementation, validation, and review workflows.
+The template helps Codex-driven projects move from idea to reviewed implementation through PRDs, GitHub issue-ready vertical slices, TDD implementation, diagnosis, validation, and review workflows.
 
 Do not create a demo app, product scaffold, or framework-specific sample inside this repository.
 
@@ -25,7 +25,7 @@ No application runtime is required. The repository is Markdown workflow content.
 rg --files
 
 # Check workflow command coverage
-rg -n "AGENTS.md|GitHub Issue|gh issue view|gh issue create|gh issue comment|gh issue edit|gh pr create|gh pr view|to-issues|triage|tdd|.agents/PRDs|.agents/stories|.agents/plans" .agents README.md AGENTS.md
+rg -n "AGENTS.md|GitHub Issue|gh issue view|gh issue create|gh issue comment|gh issue edit|gh pr create|gh pr view|to-issues|triage|diagnose|tdd|.agents/PRDs|.agents/stories|.agents/plans" .agents README.md AGENTS.md
 ```
 
 ## Architecture
@@ -67,6 +67,7 @@ rg -n "AGENTS.md|GitHub Issue|gh issue view|gh issue create|gh issue comment|gh 
 - Use GitHub Issues instead of external issue trackers.
 - Use `to-issues` after `to-prd` so `[PRD]` issues become approved vertical-slice child issues before implementation.
 - Use `triage` to move issues through the five canonical issue states before implementation.
+- Use `diagnose` for hard bugs, flaky failures, or performance regressions that need a feedback-loop-first investigation.
 - Use `tdd` for behavior-changing `ready-for-agent` issues; it performs inline planning and does not require `prime` or `plan`.
 - Branch before code edits during TDD, but do not make one issue, one branch, one PR a TDD requirement.
 - Prefer `gh issue view`, `gh issue create`, `gh issue comment`, `gh issue edit`, `gh pr create`, and `gh pr view` where useful.
@@ -84,6 +85,7 @@ rg -n "AGENTS.md|GitHub Issue|gh issue view|gh issue create|gh issue comment|gh 
 | `.agents/skills/to-issues/SKILL.md` | Breaks a `[PRD]` issue into approved vertical-slice GitHub implementation issues |
 | `.agents/skills/triage/SKILL.md` | Classifies GitHub Issues and prepares Agent Briefs for `ready-for-agent` work |
 | `.agents/skills/triage/AGENT-BRIEF.md` | Template for durable `ready-for-agent` issue comments |
+| `.agents/skills/diagnose/SKILL.md` | Diagnoses hard bugs and performance regressions through feedback-loop-first investigation |
 | `.agents/skills/tdd/SKILL.md` | Implements behavior-changing `ready-for-agent` issues with inline planning and red-green-refactor cycles |
 | `.agents/skills/rules-interactive/SKILL.md` | Greenfield interview workflow for generating `AGENTS.md` |
 | `.agents/skills/create-rules/SKILL.md` | Existing-codebase workflow for generating `AGENTS.md` |

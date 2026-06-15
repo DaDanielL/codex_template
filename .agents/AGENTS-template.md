@@ -114,6 +114,7 @@ Run these before reporting work complete:
 - **Issue inspection**: Use `gh issue view {number}` before planning linked work.
 - **Issue triage**: Use `triage` and `gh issue edit` to move issues through exactly one canonical state label.
 - **Human handoff**: `ready-for-human` must state the exact human action needed.
+- **Diagnosis**: Use `diagnose` for hard bugs, flaky failures, or performance regressions that need a feedback-loop-first investigation.
 - **TDD**: Use `tdd` for behavior-changing `ready-for-agent` issues. It performs inline planning and does not require `prime` or `plan`.
 - **Branches**: `{branch-naming-pattern}`
 - **Branch timing**: Create or switch to a work branch before code edits.
@@ -141,6 +142,8 @@ Recommended workflow:
 5. `tdd`
 6. `validate`
 7. `review` / `security-review`
+
+Use `diagnose` on demand for hard bugs and performance regressions before or during implementation.
 
 ## Security Notes
 
