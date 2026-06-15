@@ -71,6 +71,12 @@ Bug and performance issues must include:
 
 A bug can be `ready-for-agent` only when it has observed behavior, expected behavior, a reproduction path or failing command/test, and dependencies.
 
+## Diagnosis Workflow
+
+Use `diagnose` for hard bugs, flaky failures, and performance regressions where the cause is not obvious. The skill builds a reliable feedback loop first, reproduces the real symptom, ranks falsifiable hypotheses, instruments one variable at a time, and records the root cause.
+
+If a reliable feedback loop cannot be built from the issue, keep or move the issue to `needs-info` or `ready-for-human` and state the missing artifact, access, log, trace, recording, or reproduction path.
+
 ## TDD Workflow
 
 Behavior-changing `ready-for-agent` issues can go directly to `tdd` after triage. The `tdd` skill performs inline planning from the issue and Agent Brief, branches before code edits, and works in red-green-refactor cycles.

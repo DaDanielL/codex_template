@@ -31,6 +31,8 @@ For a PRD, `ready-for-agent` means ready for `to-issues`, not direct code implem
 
 Child issues from an approved PRD default to `ready-for-agent` unless that specific issue needs more information or human judgment.
 
+Hard bug, flaky failure, or performance-regression issues may route to `diagnose` once they have enough observed and expected behavior to build a feedback loop.
+
 ## Needs Info Resumption
 
 When a reporter answers a `needs-info` question, read prior triage notes, preserve what has been established, and do not re-ask resolved questions. Move the issue back to `needs-triage` or directly to the appropriate ready state once the missing information is resolved.
